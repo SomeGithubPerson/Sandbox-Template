@@ -1,15 +1,8 @@
 const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('./database/sandbox_db.db', ()=>{
-    console.log("Database Created")
+const bcrypt = require('bcrypt');
 
-})
+//TODO Figure out if i have to save the hash to my pc help bcrypt
 
-db.run(`CREATE TABLE users (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
-);`, ()=>{
-    console.log("Users Created.")
-})
+
+
+// how do i save the hash wtf bcrypt

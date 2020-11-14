@@ -8,7 +8,13 @@ app.get('/register', (req, res) => {
     res.render('register');
 });
 app.get('/login', (req,res) => {
-    console.log("wow someone really wanna log in owo")
+   res.render("login");
 })
+
+app.get('/shop', (req,res)=>{
+    res.render('shop');
+
+})
+app.use(require('express-status-monitor')());
 
 module.exports = app;

@@ -1,6 +1,6 @@
 const config = {
-    name: "what?!! Its updating!!!!!",
-    motto: "Your average sandbox site!",
+    name: "Test name",
+    motto: "Motto!",
     social_media:{
         twitter:"",
         discord:"",
