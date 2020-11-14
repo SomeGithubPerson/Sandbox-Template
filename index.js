@@ -2,13 +2,20 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const config = require('./config');
+const rateLimit = require("express-rate-limit");
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
+  });
+   
+  //  apply to all requests
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// To parse cookies from the HTTP Request
+app.use(limiter);
 app.use(cookieParser());
-
+app.use(helmet());
 app.engine('hbs', exphbs({
     extname: '.hbs',
     helpers:{
