@@ -4,6 +4,12 @@ const db = new sqlite3.Database('./database/sandbox_db.db', ()=>{
 
 })
 
-db.run('create table users', ()=>{
+db.run(`CREATE TABLE users (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);`, ()=>{
     console.log("Users Created.")
 })

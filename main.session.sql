@@ -1,4 +1,4 @@
-CREATE TABLE Persons (
+CREATE TABLE SANDBOX.users (
     PersonID int,
     LastName varchar(255),
     FirstName varchar(255),

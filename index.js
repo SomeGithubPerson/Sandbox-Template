@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.engine('hbs', exphbs({
     extname: '.hbs',
     helpers:{
-        title: this.config.name,
+        title: yconfig.name,
         
 
     }
