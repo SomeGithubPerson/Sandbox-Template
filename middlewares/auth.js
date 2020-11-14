@@ -1,8 +1,7 @@
-
 const jwt = require("jsonwebtoken");
 const config = require("config");
 
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
   //get the token from the header if present
   const token = req.headers["x-access-token"] || req.headers["authorization"];
   //if no token found, return response (without going to the next middelware)
@@ -15,6 +14,8 @@ module.exports = function(req, res, next) {
     next();
   } catch (ex) {
     //if invalid token
-    res.render("404", {layout:false})
+    res.render("404", {
+      layout: false
+    })
   }
 };
