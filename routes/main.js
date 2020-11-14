@@ -10,5 +10,8 @@ app.get('/register', (req, res) => {
 app.get('/login', (req,res) => {
     console.log("wow someone really wanna log in owo")
 })
-
+app.use(function(req, res, next){
+    res.status(404);
+    res.render("404", {layout:false})
+})
 module.exports = app;

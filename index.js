@@ -2,6 +2,7 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const config = require('./config');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -9,7 +10,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.engine('hbs', exphbs({
-    extname: '.hbs'
+    extname: '.hbs',
+    helpers:{
+        title: this.config.name,
+        
+
+    }
 }));
 app.set('view engine', 'hbs');
 
