@@ -2,6 +2,8 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const Joi = require('joi');
 const helmet = require('helmet');
 const config = require('./config');
 var Ddos = require('ddos')
@@ -12,8 +14,7 @@ const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100 // limit each IP to 100 requests per windowMs
   });
-   
-  //  apply to all requests
+//  apply to all requests
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(limiter);
@@ -23,6 +24,7 @@ app.use(helmet());
 app.engine('hbs', exphbs({
     extname: '.hbs',
     helpers:{
+        isAuth:"",
         title: config.name,
         currency: config.currency.currency
     }
