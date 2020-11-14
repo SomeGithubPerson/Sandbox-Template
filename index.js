@@ -6,19 +6,12 @@ const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const helmet = require('helmet');
 const config = require('./config');
-var Ddos = require('ddos')
-var ddos = new Ddos({burst:10, limit:15})
-
+const umbress = require('umbress')
 const rateLimit = require("express-rate-limit");
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests per windowMs
-  });
 //  apply to all requests
 const app = express();
+app.use(umbress({rateLimiter: {enabled: true}}))
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(limiter);
-app.use(ddos.express);
 app.use(cookieParser());
 app.use(helmet());
 app.engine('hbs', exphbs({
