@@ -1,6 +1,6 @@
 const app = require("express").Router();
 const exphbs = require('express-handlebars');
-
+const auth = require('../middlewares/auth')
 app.get('/', function (req, res) {
     res.render('home');
 });
@@ -13,7 +13,9 @@ app.get('/login', (req,res) => {
 
 app.get('/shop', (req,res)=>{
     res.render('shop');
-
+})
+app.get('/home', auth, (req,res)=> {
+    res.render('home')
 })
 app.use(require('express-status-monitor')());
 
