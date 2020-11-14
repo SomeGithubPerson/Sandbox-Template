@@ -1,3 +1,0 @@
--- SQLite
-create table users
-
