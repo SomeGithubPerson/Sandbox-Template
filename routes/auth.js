@@ -16,7 +16,7 @@ app.post('/register', async (req, res) => {
     console.log('Linking to DB...');
     let smt1 = db.prepare(`SELECT * FROM users WHERE username=?`)
     let a = smt1.get(req.body.username)
-    if (a) {
+    if (a===req.body.username) {
         res.send("Username exists...")
 
     } else {
@@ -42,13 +42,17 @@ app.post('/login', (req, res) => {
         res.send("incorrect username.")
 
     } else {
-        bcrypt.compare(req.body.password, hash, function (err, result) {
-            if (result === true) {
-                res.send("All your credentials are correct.")
-            } else {
-                res.send("Your password is incorrect.")
-            }
-        });
+        bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+            bcrypt.compare(req.body.password, hash, function (err, result) {
+                if (result === true) {
+                    res.send("All your credentials are correct.")
+                } else {
+                    res.send("Your password is incorrect.")
+                }
+            });
+
+        })
+        
     }
 
 })
