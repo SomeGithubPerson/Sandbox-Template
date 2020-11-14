@@ -1,5 +1,5 @@
 const config = {
-    name: "My Sandbox Site!",
+    name: "what?!! Its updating!!!!!",
     motto: "Your average sandbox site!",
     social_media:{
         twitter:"",
@@ -11,14 +11,26 @@ const config = {
         postRate: 1, // one post every 15 seconds
 
         categories:{
-            General: "General",
-            GeneralDesc: "Just a general place",
+            General:{
+                name: "General",
+                desc: "Just a general place",
+            },
+            OffTopic:{
+                name: "Off Topic",
+                desc: "Just off place",
+            },
+            Market:{
+                name: "Marketplace",
+                desc: "WHAT?! IS THAT BIG CHUNGUS?!",
+            },
+            Poggers:{
+                name: "this is pog",
+                desc: "how",
+            },
+
+           
             ///////////////////
-            OffTopic: "Off-Topic",
-            OffTopicDesc: "Just random.",
-            /////////////////////////////
-            MarketPlace:"Market",
-            MarketPlaceDesc:"Trading?! How?!",
+            
             ////////////////////////////
         }
 

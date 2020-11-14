@@ -3,22 +3,30 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path')
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose')
+const db = require('better-sqlite3')(__dirname+'../database/sandbox_db.db');
+const bcrypt = require('bcrypt')
+const saltRounds = 10
+const nanoid = require('nanoid');
+const { Hash } = require("crypto");
+
 console.log(__dirname)
 app.get('/', (req, res)=> {
     res.send("yes")
 })
-app.post('/register', (req, res)=> {
+app.post('/register', async (req, res)=> {
    console.log('Linking to DB...');
+   bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+       db.run(`INSERT INTO users VALUES (${nanoid.nanoid(21)}, ${req.body.username}, ${req.body.email} , ${hash}) `)
+       console.log(`New user with name ${req.body.username}\nPassword: ${hash}`)
+       res.send("Done!")
+
+});
 
 
 })
 app.post('/login', (req,res) => {
     console.log("wow someone really wanna log in owo")
 })
-app.use(function(req, res, next){
-    res.status(404);
-    res.render("404", {layout:false})
-})
+
 
 module.exports = app;

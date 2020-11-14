@@ -12,9 +12,8 @@ app.use(cookieParser());
 app.engine('hbs', exphbs({
     extname: '.hbs',
     helpers:{
-        title: yconfig.name,
-        
-
+        title: config.name,
+        currency: config.currency.currency
     }
 }));
 app.set('view engine', 'hbs');
