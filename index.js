@@ -4,6 +4,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const config = require('./config');
+var Ddos = require('ddos')
+var ddos = new Ddos({burst:10, limit:15})
+
 const rateLimit = require("express-rate-limit");
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -14,6 +17,7 @@ const limiter = rateLimit({
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(limiter);
+app.use(ddos.express);
 app.use(cookieParser());
 app.use(helmet());
 app.engine('hbs', exphbs({
