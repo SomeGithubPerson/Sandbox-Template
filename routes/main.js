@@ -11,7 +11,7 @@ app.get('/login', (req,res) => {
    res.render("login");
 })
 
-app.get('/shop', (req,res)=>{
+app.get('/shop', (req,res)=>{ 
     res.render('shop');
 })
 app.get('/home', auth, (req,res)=> {
@@ -20,3 +20,7 @@ app.get('/home', auth, (req,res)=> {
 app.use(require('express-status-monitor')());
 
 module.exports = app;
+
+app.get('/admin', (req, res)=>{
+    res.render("admin")
+})

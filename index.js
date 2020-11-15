@@ -2,15 +2,11 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const jwt = require('jsonwebtoken');
-const Joi = require('joi');
 const helmet = require('helmet');
 const config = require('./config');
 const umbress = require('umbress')
-const rateLimit = require("express-rate-limit");
 //  apply to all requests
 const app = express();
-app.use(umbress({rateLimiter: {enabled: true}}))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(helmet());

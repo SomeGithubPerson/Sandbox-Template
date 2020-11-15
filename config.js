@@ -53,7 +53,11 @@ const config = {
     },
     bootsrapTheme: "flatly", // https://bootswatch.com/
 
-    site_icon: ""
+    site_icon: "",
+
+    jwt_Key: "", // Write random crap here and then encrypt it on this website https://bcrypt-generator.com/, after that paste what you got here.
+    jwt_Key2: "", // Write random crap here and then encrypt it on this website https://bcrypt-generator.com/, after that paste what you got here.
+
 
 
 }
