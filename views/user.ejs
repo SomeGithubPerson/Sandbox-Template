@@ -1,0 +1,13 @@
+<%- include('partials/header', {name: name}); -%>
+<h1>Username: <%= username  %> </h1>
+<p>Post Count: <%= user_posts %> </p>
+<% if (Admin) { %>
+ <p> The user is an Administrator!</p>
+<% } else {%>
+
+   <p>User is NOT an administrator</p>
+<% 
+
+} %> 
+<p> User unique id is: <%= userid  %> </p>
+</body>

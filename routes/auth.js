@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const userFunc = require("./../database/models/user");
 const nanoid = require("nanoid");
-const jwt = requrie("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 app.get("/", (req, res) => {
   res.send("yes");
