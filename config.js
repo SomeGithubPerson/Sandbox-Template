@@ -1,4 +1,5 @@
 const config = {
+    maintenance: false,
     name: "Test name",
     motto: "Motto!",
     social_media:{

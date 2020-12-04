@@ -4,7 +4,9 @@ const auth = require('../middlewares/auth')
 const config = require('../config')
 const db = require("better-sqlite3")(__dirname + "/../database/sandbox_db.db");
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('home', {
+        name: config.name
+    });
 });
 app.get('/register', (req, res) => {
     res.render('register');
