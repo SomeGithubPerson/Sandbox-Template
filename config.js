@@ -56,8 +56,8 @@ const config = {
 
     site_icon: "",
 
-    jwt_Key: "", // Write random crap here and then encrypt it on this website https://bcrypt-generator.com/, after that paste what you got here.
-    jwt_Key2: "", // Write random crap here and then encrypt it on this website https://bcrypt-generator.com/, after that paste what you got here.
+    jwt_Key: "askdaskdklasdlk1j23jk1kj312kj3kjl12j3kl1j3l", // Write random crap here and then encrypt it on this website https://bcrypt-generator.com/, after that paste what you got here.
+    jwt_Key2: "321lj312kjl3klj12kjl312klj3klj123kjl12lkj312jkl3", // Write random crap here and then encrypt it on this website https://bcrypt-generator.com/, after that paste what you got here.
 
 
 
