@@ -4,6 +4,16 @@ A Blazingly fast sandbox website template running NodeJS with Express & Handleba
  
 ----
 
+# How to set up!
+
+1. Clone the REPO
+2. Change the settings on config.js
+3. run `npm i && node index.js` and you should be running.
+
+If you get any error message me on discord. (Link down below)
+
+
+
 # FAQ
 
 #### Why did you make this.
