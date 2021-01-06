@@ -1,12 +1,12 @@
 const config = {
     maintenance: false,
-    name: "Test name",
-    motto: "Motto!",
+    name: "Polyoid",
+    motto: "The best sandbox Game!",
     social_media:{
-        twitter:"",
-        discord:"",
-        guilded:"",
-        youtube:"",
+        twitter:"https://github.com/TENEIDAE/Sandbox-Template",
+        discord:"https://discord.gg/j6qtNnyXnw",
+        guilded:"#",
+        youtube:"https://www.youtube.com/channel/UCr2NV-b2pmMg4OUtYQFj4Kw",
     },
     forums:{
         postRate: 1, // one post every 15 seconds
@@ -49,7 +49,7 @@ const config = {
     memberShip:{
         memberShipExtraCurrency: 100, // Money per day for plus
         noMembershipExtraCurrency: 20, // Money per day for no plus
-        membershipName: "Plus", // Membership name
+        membershipName: "Overclocked", // Membership name
 
     },
     bootsrapTheme: "flatly", // https://bootswatch.com/
